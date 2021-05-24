@@ -14,7 +14,7 @@
             <div class='card-content'>
                 <div class='media'>
                     <div class='media-content'>
-                        <p class='title is-4'>{{ pet.name }}</p>
+                        <p class='title is-4'><a href='/{{pet.id}}'>{{ pet.name }}</a></p>
                         {% if pet.available %}
                             <p class='title is-4'><b>Available!</b></p>
                         {% else %}
