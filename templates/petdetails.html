@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ pet.name }}{% endblock %}
+
+{% block content %}
+    <h1>Details - {{ pet.name }}</h1>
+    <ul>
+        <li>{{ pet.name }}</li>
+        <li>{{ pet.species }}</li>
+        <li>{{ pet.age }}</li>
+    </ul>
+    <p>{{ pet.notes }}</p>
+    <a href='/' class='button'>Back to Pets Home</a>
+{% endblock %}
