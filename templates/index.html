@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}All Pets{% endblock %}
+
+{% block content %}
+    <h1 class='title'>Pets :)</h1>
+    {% for pet in pets %}
+        <div class='card block' style='box-shadow: black 2px; padding: 5px 5px;'>
+            <div class='card-image'>
+                <figure>
+                    <img src='{{ pet.photo_url }}' style='height: 200px; width: 200px'>
+                </figure>
+            </div>
+            <div class='card-content'>
+                <div class='media'>
+                    <div class='media-content'>
+                        <p class='title is-4'>{{ pet.name }}</p>
+                        {% if pet.available %}
+                            <p class='title is-4'><b>Available!</b></p>
+                        {% else %}
+                            <p class='title is-4'><b>Coming Soon!</b></p>
+                        {% endif %}
+                    </div>
+                </div>
+            <div class='content'>
+                {{ pet.notes }}
+                <br>
+                Age: {{ pet.age }}
+                <br>
+            </div>
+        </div>
+    {% endfor %}
+
+    <a class='button is-primary' href='/add' style='padding: 10px'>Add Pet to Agency Database</a>
+{% endblock %}
